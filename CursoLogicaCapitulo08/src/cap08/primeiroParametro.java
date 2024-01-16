@@ -2,7 +2,7 @@ package cap08;
 
 import java.util.Scanner;
 
-public class PrimeiroMetodo {
+public class primeiroParametro {
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
 		
@@ -12,9 +12,7 @@ public class PrimeiroMetodo {
 		
 		System.out.println("Escolha dentre os cursos abaixo: ");
 		
-		for(int i = 0; i < cursos.length; i++) {
-			System.out.println("[" + i + "] " + cursos[i]);
-		}
+		iterarEExibirPosicoesDoVetorString(cursos);
 
 		System.out.print("O curso que você deseja é o: ");
 		Integer posicaoCursoEscolhido = scanner.nextInt();
@@ -31,9 +29,7 @@ public class PrimeiroMetodo {
 		
 		System.out.println("Escolha dentre as formas de pagamento abaixo: ");
 		
-		for(int i = 0; i < formasPagamento.length; i++) {
-			System.out.println("[" + i + "] " + formasPagamento[i]);
-		}
+		iterarEExibirPosicoesDoVetorString(formasPagamento);
 
 		System.out.print("Sua forma de pagamento escolhida é: ");
 		Integer posicaoFormaPagamentoEscolhida = scanner.nextInt();
@@ -54,11 +50,19 @@ public class PrimeiroMetodo {
 		
 		scanner.close();
 	}
+	
+	static void iterarEExibirPosicoesDoVetorString(String[] vetor) {
+		for(int i = 0; i < vetor.length; i++) {
+//			System.out.println("[" + i + "] " + vetor[i]);
+			System.out.println(i + "] " + vetor[i]);
+		}
+	}
+	
 	static void imprimirTraco() {
 		System.out.println("----------------------------------------------");
 	}
 	static void imprimirErro() {
 		System.err.println("Posição inválida!");
 		System.exit(1);
+} 
 	}
-}
